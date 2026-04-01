@@ -14,7 +14,7 @@ defmodule Mihari.Config do
 
   ## Example
 
-      config :mihari,
+      config :mihari_logger,
         endpoint: "https://logs.example.com/api/v1/logs",
         token: "your-api-token",
         batch_size: 10,
@@ -52,17 +52,17 @@ defmodule Mihari.Config do
   @spec read!() :: t()
   def read! do
     endpoint =
-      Application.get_env(:mihari, :endpoint) ||
+      Application.get_env(:mihari_logger, :endpoint) ||
         raise ArgumentError, "Mihari :endpoint must be configured"
 
     %__MODULE__{
       endpoint: endpoint,
-      token: Application.get_env(:mihari, :token),
-      batch_size: Application.get_env(:mihari, :batch_size, 10),
-      flush_interval_ms: Application.get_env(:mihari, :flush_interval_ms, 5_000),
-      max_retries: Application.get_env(:mihari, :max_retries, 3),
-      retry_base_delay_ms: Application.get_env(:mihari, :retry_base_delay_ms, 1_000),
-      gzip: Application.get_env(:mihari, :gzip, true)
+      token: Application.get_env(:mihari_logger, :token),
+      batch_size: Application.get_env(:mihari_logger, :batch_size, 10),
+      flush_interval_ms: Application.get_env(:mihari_logger, :flush_interval_ms, 5_000),
+      max_retries: Application.get_env(:mihari_logger, :max_retries, 3),
+      retry_base_delay_ms: Application.get_env(:mihari_logger, :retry_base_delay_ms, 1_000),
+      gzip: Application.get_env(:mihari_logger, :gzip, true)
     }
   end
 

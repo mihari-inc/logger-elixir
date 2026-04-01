@@ -1,6 +1,6 @@
 import Config
 
-config :mihari,
+config :mihari_logger,
   endpoint: "http://localhost:4001/api/v1/logs",
   token: "test-token",
   batch_size: 3,

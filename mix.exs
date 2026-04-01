@@ -2,11 +2,11 @@ defmodule Mihari.MixProject do
   use Mix.Project
 
   @version "0.1.0"
-  @source_url "https://github.com/mihari/mihari-elixir"
+  @source_url "https://github.com/mihari/logger-elixir"
 
   def project do
     [
-      app: :mihari,
+      app: :mihari_logger,
       version: @version,
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
@@ -14,7 +14,7 @@ defmodule Mihari.MixProject do
       description: description(),
       package: package(),
       docs: docs(),
-      name: "Mihari",
+      name: "MihariLogger",
       source_url: @source_url
     ]
   end
@@ -44,7 +44,7 @@ defmodule Mihari.MixProject do
 
   defp package do
     [
-      name: "mihari",
+      name: "mihari_logger",
       licenses: ["MIT"],
       links: %{"GitHub" => @source_url},
       files: ~w(lib mix.exs README.md LICENSE .formatter.exs)

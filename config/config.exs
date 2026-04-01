@@ -1,6 +1,6 @@
 import Config
 
-config :mihari,
+config :mihari_logger,
   endpoint: System.get_env("MIHARI_ENDPOINT", "https://logs.mihari.io/api/v1/logs"),
   token: System.get_env("MIHARI_TOKEN"),
   batch_size: 10,

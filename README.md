@@ -1,4 +1,4 @@
-# Mihari
+# Mihari Logger
 
 Open-source log collection and transport library for Elixir. Ship structured logs to any HTTP endpoint with automatic batching, gzip compression, retries with exponential backoff, and a native Elixir Logger backend.
 
@@ -15,12 +15,12 @@ Open-source log collection and transport library for Elixir. Ship structured log
 
 ## Installation
 
-Add `mihari` to your list of dependencies in `mix.exs`:
+Add `mihari_logger` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:mihari, "~> 0.1.0"}
+    {:mihari_logger, "~> 0.1.0"}
   ]
 end
 ```
@@ -29,7 +29,7 @@ end
 
 ```elixir
 # config/config.exs
-config :mihari,
+config :mihari_logger,
   endpoint: "https://logs.example.com/api/v1/logs",
   token: System.get_env("MIHARI_TOKEN"),
   batch_size: 10,
@@ -104,7 +104,7 @@ Add Mihari to your Phoenix application dependencies and configure it:
 defp deps do
   [
     {:phoenix, "~> 1.7"},
-    {:mihari, "~> 0.1.0"},
+    {:mihari_logger, "~> 0.1.0"},
     # ... other deps
   ]
 end
@@ -112,7 +112,7 @@ end
 
 ```elixir
 # config/config.exs
-config :mihari,
+config :mihari_logger,
   endpoint: "https://logs.example.com/api/v1/logs",
   token: System.get_env("MIHARI_TOKEN")
 ```

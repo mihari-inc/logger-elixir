@@ -9,12 +9,12 @@ defmodule Mihari.ClientTest do
     name = :"client_test_#{System.unique_integer([:positive])}"
 
     # Set test config
-    Application.put_env(:mihari, :endpoint, "http://localhost:9999/api/v1/logs")
-    Application.put_env(:mihari, :token, "test-token")
-    Application.put_env(:mihari, :batch_size, 3)
-    Application.put_env(:mihari, :flush_interval_ms, 60_000)
-    Application.put_env(:mihari, :max_retries, 0)
-    Application.put_env(:mihari, :gzip, false)
+    Application.put_env(:mihari_logger, :endpoint, "http://localhost:9999/api/v1/logs")
+    Application.put_env(:mihari_logger, :token, "test-token")
+    Application.put_env(:mihari_logger, :batch_size, 3)
+    Application.put_env(:mihari_logger, :flush_interval_ms, 60_000)
+    Application.put_env(:mihari_logger, :max_retries, 0)
+    Application.put_env(:mihari_logger, :gzip, false)
 
     {:ok, pid} = Client.start_link(name: name)
 

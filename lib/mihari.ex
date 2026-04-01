@@ -16,7 +16,7 @@ defmodule Mihari do
   ## Configuration
 
       # config/config.exs
-      config :mihari,
+      config :mihari_logger,
         endpoint: "https://logs.example.com/api/v1/logs",
         token: System.get_env("MIHARI_TOKEN"),
         batch_size: 10,

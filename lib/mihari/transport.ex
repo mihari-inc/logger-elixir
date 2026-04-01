@@ -78,7 +78,7 @@ defmodule Mihari.Transport do
   defp prepare_body_and_headers(json, config) do
     base_headers = [
       {"content-type", "application/json"},
-      {"user-agent", "mihari-elixir/#{Application.spec(:mihari, :vsn) || "dev"}"}
+      {"user-agent", "mihari-elixir/#{Application.spec(:mihari_logger, :vsn) || "dev"}"}
     ]
 
     auth_headers =
